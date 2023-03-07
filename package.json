@@ -1,0 +1,24 @@
+{
+  "name": "social-network-api",
+  "version": "1.0.0",
+  "description": "social media api made with mongodb and mongoose",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/indwomt/social-network-api.git"
+  },
+  "author": "Lauren Bentley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/indwomt/social-network-api/issues"
+  },
+  "homepage": "https://github.com/indwomt/social-network-api#readme",
+  "dependencies": {
+    "express": "4.18.2",
+    "mongoose": "7.0.1"
+  }
+}
