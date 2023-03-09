@@ -80,10 +80,10 @@ const thoughtSchema =  new Schema(
 )
 
 // take that schema, make it model
-const Thought = model('Thought', thoughtSchema)
+const Thoughts = model('Thoughts', thoughtSchema)
 
 // we only need to export the Thought model
-module.exports = Thought
+module.exports = Thoughts
 
 
 
