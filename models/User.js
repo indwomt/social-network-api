@@ -14,7 +14,8 @@ const userSchema = new Schema(
             type: String,
             required: true,
             unique: true,
-            // match: EMAIL VALIDATOR,
+            // regex for validation, putting that hw to good use baby
+            match: [/.+@.+\..+/]
         },
 
         thoughts: [
