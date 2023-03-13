@@ -45,21 +45,23 @@ module.exports = {
         .catch((err) => res.status(500).json(err));
     },
 
-    updateUser(req,res) {
+    updateUser(req, res) {
         User.findOneAndUpdate(
-            
-            // What does this even mean???????
-            { _id: req.params.id },
-            { $set: req.body },
-            { runValidators: true, new: true }
-          )
-            .then((user) =>
-              !user
-                ? res.status(404).json({ message: 'No user with this id!' })
-                : res.json(user)
-            )
-            .catch((err) => res.status(500).json(err));
-    }
+          { _id: req.params.id },
+          { $set: req.body },
+          { runValidators: true, new: true }
+        )
+        .then((user) => {
+          if (!user) {
+            return res.status(404).json({ message: 'No user with this id!' });
+          }
+          return res.json(user);
+        })
+        .catch((err) => {
+          console.error(err);
+          return res.status(500).json({ message: 'Internal server error' });
+        });
+      }
   }
 
 
