@@ -42,9 +42,9 @@ const userSchema = new Schema(
     }
 )
 
-userSchema.virtual("friendCount".get(function (){
+userSchema.virtual('friendCount').get(function (){
     return this.friends.length
-}))
+})
 
 // Initiate 'User' model, above is the schema, which is different in ways I do not fully understand yet
 
