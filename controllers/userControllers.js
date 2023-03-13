@@ -33,13 +33,13 @@ module.exports = {
   
     deleteUser(req, res) {
         
-      User.findOneAndDelete({ _id: req.params.courseId })
+      User.findOneAndDelete({ _id: req.params.id })
         .then((user) =>
         // if there's no user found, do this
-          !course
+          !user
             ? res.status(404).json({ message: 'No User with that Id found' })
             // User found? Do this!
-            : Student.deleteMany({ _id: { $in: course.students } })
+            : User.deleteMany({ _id: { $in: course.students } })
         )
         .then(() => res.json({ message: 'User deleted!' }))
         .catch((err) => res.status(500).json(err));
