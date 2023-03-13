@@ -11,7 +11,7 @@ module.exports = {
     },
   
     getSingleUser(req, res) {
-      // TODO: See if I need to add the id element to the user model??
+      
       User.findOne({ _id: req.params.courseId })
         .select('-__v')
         .then((course) =>
@@ -32,7 +32,7 @@ module.exports = {
     },
   
     deleteUser(req, res) {
-        // TODO: FIGURE OUT ID SITUATION HERE TOO
+        
       User.findOneAndDelete({ _id: req.params.courseId })
         .then((user) =>
         // if there's no user found, do this
@@ -47,7 +47,7 @@ module.exports = {
 
     updateUser(req,res) {
         User.findOneAndUpdate(
-            // ID SITUATION HERE TOO????
+            
             // What does this even mean???????
             { _id: req.params.courseId },
             { $set: req.body },
