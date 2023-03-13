@@ -9,8 +9,9 @@ const {
     updateUser
 } = require('../../controllers/userControllers')
 
-router
-.route('/').get(getAllUsers).post(createUser)
+router.route('/').get(getAllUsers).post(createUser)
+
+router.route('/:id').get(getSingleUser).put(updateUser).delete(deleteUser)
 
 
 

@@ -12,12 +12,12 @@ module.exports = {
   
     getSingleUser(req, res) {
       
-      User.findOne({ _id: req.params.courseId })
+      User.findOne({ _id: req.params.id})
         .select('-__v')
-        .then((course) =>
-          !course
-            ? res.status(404).json({ message: 'No course with that ID' })
-            : res.json(course)
+        .then((user) =>
+          !user
+            ? res.status(404).json({ message: 'No user with that ID' })
+            : res.json(user)
         )
         .catch((err) => res.status(500).json(err));
     },
@@ -49,7 +49,7 @@ module.exports = {
         User.findOneAndUpdate(
             
             // What does this even mean???????
-            { _id: req.params.courseId },
+            { _id: req.params.id },
             { $set: req.body },
             { runValidators: true, new: true }
           )
