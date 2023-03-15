@@ -38,7 +38,7 @@ module.exports = {
         
         Thought.findOneAndDelete({ _id: req.params.id })
           .then((thought) =>
-          // if there's no user found, do this
+          // if there's no thought found, do this
             !thought
               ? res.status(404).json({ message: 'No User with that Id found' })
               // User found? Do this!
